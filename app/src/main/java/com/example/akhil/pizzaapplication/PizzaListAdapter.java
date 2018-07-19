@@ -11,7 +11,10 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class PizzaListAdapter extends RecyclerView.Adapter<PizzaListAdapter.ItemHolder> {
-    public PizzaListAdapter() {
+
+    private ItemClickListener mListener;
+    public PizzaListAdapter(ItemClickListener callBack) {
+        this.mListener = callBack;
     }
 
     @NonNull
@@ -34,7 +37,7 @@ public class PizzaListAdapter extends RecyclerView.Adapter<PizzaListAdapter.Item
     }
 
 
-    public static class ItemHolder extends RecyclerView.ViewHolder {
+    public class ItemHolder extends RecyclerView.ViewHolder {
 
         TextView mTxtPizzaName;
         TextView mTxtPizzaType;
@@ -44,7 +47,15 @@ public class PizzaListAdapter extends RecyclerView.Adapter<PizzaListAdapter.Item
             mTxtPizzaName = (TextView) itemView.findViewById(R.id.pizza_name);
             mTxtPizzaType = (TextView) itemView.findViewById(R.id.txt_pizza_size);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mListener.onItemCallBack();
+                }
+            });
+
         }
     }
+
 
 }
