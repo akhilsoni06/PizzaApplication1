@@ -1,0 +1,23 @@
+{
+
+  "pizzaType":[
+
+    {
+      "type":"type1",
+      "size":"size1"},
+    {
+      "type":"type2",
+      "size":"size2"},
+    {
+      "type":"type3",
+      "size":"size3"},
+    {
+      "type":"type4",
+      "size":"size4"},
+    {
+      "type":"type5",
+      "size":"size5"}
+
+
+  ]
+}
